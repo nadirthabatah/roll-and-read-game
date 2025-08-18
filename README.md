@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎲 Roll & Read Game
 
-## Getting Started
+A therapeutic reading practice game designed for students with dyslexia. Built with Next.js, featuring dice-based word selection and speech recognition for reading assessment.
 
-First, run the development server:
+![Roll & Read Game Interface](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+![Next.js](https://img.shields.io/badge/Next.js-15-blueviolet)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-cyan)
+
+## ✨ Features
+
+### 🎮 Core Gameplay
+- **3D Dice Rolling**: High-contrast dice with clear black dots on white background
+- **Word Practice**: 6 rows of phonetically organized words per level
+- **Speech Recognition**: 60-second recording window with real-time feedback
+- **Progress Tracking**: Visual completion indicators and accuracy scoring
+
+### 🎨 Accessibility Design
+- **High Contrast**: Optimized for dyslexia and visual processing differences
+- **Dark/Light Mode**: Toggle for lighting preferences
+- **Large Text**: Clear, readable fonts and sizing
+- **No Distractions**: Minimal UI that keeps focus on reading
+
+### 🔊 Audio Features
+- **Custom Dice Sounds**: Realistic rolling sound effects
+- **Voice Wave Animation**: Visual feedback during recording
+- **Smart Audio Control**: Sounds stop appropriately to avoid overwhelming users
+
+### 📱 User Experience
+- **No Blocking Popups**: Students can see words while recording (critical for reading practice)
+- **One-Click Recording**: Simple "Read these words" button
+- **Manual Stop Control**: Click the voice wave to stop recording early
+- **Responsive Design**: Works on desktop, tablet, and mobile
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Deepgram API key (for speech recognition)
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/roll-and-read.git
+cd roll-and-read
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your API keys
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to see the game in action!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 How to Play
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Setup**: Click "Select Learning Level" to choose difficulty and word category
+2. **Roll**: Click the dice to get a number (1-6)
+3. **Read**: The corresponding row lights up - read all the words aloud
+4. **Record**: Click "Read these words" and speak clearly
+5. **Complete**: Click the voice wave to stop, or wait 60 seconds for auto-stop
+6. **Progress**: Watch your accuracy improve as you complete more rows!
 
-## Learn More
+## 🎓 Educational Background
 
-To learn more about Next.js, take a look at the following resources:
+This game implements principles from the **Orton-Gillingham methodology**, a structured, sequential approach to teaching reading that's particularly effective for students with dyslexia.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Learning Features
+- **Phonetic Organization**: Words grouped by sound patterns
+- **Progressive Difficulty**: 5 levels from foundation to advanced
+- **Multisensory Approach**: Visual, auditory, and kinesthetic learning
+- **Immediate Feedback**: Real-time accuracy assessment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔧 Development
 
-## Deploy on Vercel
+### Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Run production build
+npm run lint         # Check code quality
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+We welcome contributions! This project is designed to help students with dyslexia, so all improvements that enhance accessibility and learning effectiveness are appreciated.
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgments
+
+- **Orton-Gillingham Institute** - For the foundational reading methodology
+- **Dyslexia Therapy Community** - For feedback and testing
+- **Open Source Contributors** - For the amazing tools that make this possible
+
+---
+
+**Built with ❤️ for students with dyslexia and the therapists who support them.**
