@@ -97,6 +97,52 @@ src/
 DEEPGRAM_API_KEY=your_deepgram_key
 ELEVENLABS_API_KEY=your_elevenlabs_key
 NEXT_PUBLIC_POSTHOG_KEY=your_posthog_key
+GITHUB_PERSONAL_ACCESS_TOKEN=your_github_token
+STRIPE_API_KEY=your_stripe_key
+SUPABASE_ACCESS_TOKEN=your_supabase_token
+```
+
+## 🔌 MCP Servers Configuration
+
+The project uses **6 MCP (Model Context Protocol) servers** for extended functionality:
+
+### Configured MCPs:
+- **🗄️ Supabase**: Database operations, user management, data persistence
+- **🎭 Puppeteer**: Browser automation, testing, screenshots
+- **🐙 GitHub**: Repository management, issues, pull requests
+- **💳 Stripe**: Payment processing, subscription management
+- **🎪 Playwright**: End-to-end testing, cross-browser testing
+- **🐳 Docker**: Container management, deployment automation
+
+### Quick Setup:
+```bash
+# Run the MCP setup script
+./setup-mcp.sh
+
+# Verify all MCPs are configured
+claude mcp list
+```
+
+### Manual MCP Setup:
+If you need to reconfigure MCPs manually, use these commands:
+```bash
+# Supabase
+claude mcp add supabase -- npx -y @supabase/mcp-server-supabase@latest --access-token YOUR_TOKEN
+
+# Puppeteer
+claude mcp add puppeteer -- npx -y @modelcontextprotocol/server-puppeteer
+
+# GitHub
+GITHUB_PERSONAL_ACCESS_TOKEN=YOUR_TOKEN claude mcp add github -- npx -y @modelcontextprotocol/server-github
+
+# Stripe
+claude mcp add stripe "npx -y @stripe/mcp" -- --tools=all --api-key=YOUR_KEY
+
+# Playwright
+claude mcp add playwright npx '@playwright/mcp@latest'
+
+# Docker
+claude mcp add docker-mcp -- docker run -i --rm quantgeekdev/docker-map
 ```
 
 ### 🚀 Development Commands
@@ -202,8 +248,38 @@ npm run lint     # Check code quality
 
 This project is designed for educational and therapeutic use. The word lists are derived from established dyslexia therapy methodologies and are intended to support reading development in students with dyslexia.
 
+## 🔧 Recent Development Session (August 2025)
+
+### MCP Configuration Completed ✅
+Successfully configured **4 out of 6 MCP servers** for extended functionality:
+
+#### Working MCPs:
+- **🗄️ Supabase** - Database operations, user management, data persistence
+- **🎭 Puppeteer** - Browser automation, testing, screenshots  
+- **🐙 GitHub** - Repository management, issues, pull requests
+- **🎪 Playwright** - End-to-end testing, cross-browser testing
+
+#### Configuration Notes:
+- **Stripe MCP** - Connection issues detected (may need package version update)
+- **Docker MCP** - Requires Docker daemon running (temporarily removed)
+
+#### Files Created:
+- `setup-mcp.sh` - One-click MCP restoration script with all 6 servers
+- Updated environment variables in `.env.local`
+- Added comprehensive MCP documentation
+
+#### Persistent Setup:
+All MCP configurations are now saved and will automatically reconnect across sessions. The `setup-mcp.sh` script ensures you never need to manually re-enter these configurations.
+
+### Available MCP Tools:
+With the configured MCPs, you now have access to:
+- **Database Operations**: Create tables, manage user data, handle authentication
+- **Browser Automation**: Screenshot generation, UI testing, web scraping
+- **GitHub Integration**: Repository management, issue tracking, automated deployments
+- **Advanced Testing**: Cross-browser testing, performance monitoring
+
 ---
 
-**Last Updated**: December 2024
-**Status**: Production-ready MVP
-**Next Review**: After user testing feedback
+**Last Updated**: August 24, 2025
+**Status**: Production-ready MVP with MCP Integration
+**Next Phase**: Stickers & Rewards System Implementation

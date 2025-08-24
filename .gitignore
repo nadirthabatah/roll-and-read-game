@@ -49,3 +49,14 @@ generate-*.js
 # Temporary files
 temp/
 tmp/
+
+# Claude configuration (contains API keys)
+/.claude.json
+
+# Playwright test artifacts
+/playwright-report/
+/test-results/
+
+# Additional test files
+comprehensive-*.png
+investigation-*.png
